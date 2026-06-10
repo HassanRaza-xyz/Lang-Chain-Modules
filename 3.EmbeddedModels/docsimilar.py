@@ -103,6 +103,7 @@ query = "tell me about sachin"
 doc_embedding = model.embed_documents(docuemnt)
 query_embed = model.embed_query(query)
 score = cosine_similarity([query_embed] , doc_embedding)[0]
+print("score",score)
 sorted_score = sorted(list(enumerate(score)),key = lambda x:x[1])
 print("sorted score", sorted_score)
 best_match = sorted_score[-1]
@@ -110,4 +111,4 @@ index = best_match[0]
 similar = best_match[1]
 print(query)
 print(docuemnt[index])
-print(score)
+print(similar)
