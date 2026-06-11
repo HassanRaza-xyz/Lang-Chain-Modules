@@ -112,3 +112,8 @@ similar = best_match[1]
 print(query)
 print(docuemnt[index])
 print(similar)
+
+
+    
+
+
