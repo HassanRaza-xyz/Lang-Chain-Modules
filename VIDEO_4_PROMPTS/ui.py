@@ -27,13 +27,13 @@ Ensure the summary is clear, accurate, and aligned with the provided style and l
 input_variables=['paper_input','style_input','length_input','user_input'],
 validate_template=True
 )
-prompt = template.invoke({
-    'paper_input': paper_input,
-    'style_input' : style_input,
-    'length_input': length_input,
-    'user_input': user_input,
-})
 
-if st.button("Summarize"):
-               result = model.invoke(prompt)
-               st.write(result.content)
+if st.button("Summarize"):            
+            prompt = template.invoke({
+                  'paper_input': paper_input,
+                  'style_input' : style_input,
+                'length_input': length_input,
+               'user_input': user_input,
+            })
+            result = model.invoke(prompt)
+            st.write(result.content)
