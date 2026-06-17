@@ -24,7 +24,8 @@ Explanation Length: {length_input}
 If certain information is not available in the paper, respond with: "Insufficient information available" instead of guessing.
 Ensure the summary is clear, accurate, and aligned with the provided style and length.
 {user_input}""",
-input_variables=['paper_input','style_input','length_input','user_input']
+input_variables=['paper_input','style_input','length_input','user_input'],
+validate_template=True
 )
 prompt = template.invoke({
     'paper_input': paper_input,
