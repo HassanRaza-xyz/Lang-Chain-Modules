@@ -14,7 +14,9 @@ length_input = st.selectbox( "Select Explanation Length", ["Short (1-2 paragraph
 user_input = st.text_area("Any specific instructions?")
 
 
-if st.button("Summarize"):  
+if st.button("Summarize"): 
+            if paper_input == "Select..." :
+                    st.error("ERROR!!! Please Select the paper First")
             chain = template | model
             result =chain.invoke({
                   'paper_input': paper_input,
@@ -24,3 +26,5 @@ if st.button("Summarize"):
             })        
            
             st.write(result.content)
+
+
